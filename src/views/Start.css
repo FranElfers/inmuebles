@@ -1,4 +1,4 @@
-.container {
+.admin-container {
   display: grid;
   grid-template-rows: calc(100vh - 380px) auto;
   grid-template-columns: 1fr;
@@ -12,33 +12,33 @@
   text-align: left;
 }
 
-.container > div {
+.admin-container > div {
   padding: 10px;
   overflow: hidden;
   border-radius: 20px;
   border: 2px solid #525252;
 }
 
-.container h3 {
+.admin-container h3 {
   text-align: center;
 }
 
-.container .tabla {
+.admin-container .tabla {
   grid-area: middle;
 }
 
-.container .left {
+.admin-container .left {
   grid-area: left;
   height: 250px;
 }
 
-.container .right {
+.admin-container .right {
   grid-area: right;
   height: 250px;
 }
 
 @media (min-width: 600px) {
-  .container {
+  .admin-container {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "middle middle"
@@ -46,7 +46,7 @@
   }
 }
 
-.container .upload {
+.admin-container .upload {
   display: grid;
   grid-template-columns: 220px 1fr;
   grid-template-rows: 1fr;
@@ -54,13 +54,13 @@
   grid-row-gap: 0px;
 }
 
-.container .upload textarea {
+.admin-container .upload textarea {
   resize: none;
   width: 95%;
   height: 120px;
 }
 
-.container .upload code {
+.admin-container .upload code {
   color: tomato;
   white-space: pre-wrap;
 }

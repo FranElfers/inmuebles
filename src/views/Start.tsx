@@ -8,7 +8,7 @@ const MainGrid = () => {
 	const getPlaces = useGetPlaces()
 	const setPlace = useSetPlace()
 
-	return <div className="container">
+	return <div className="admin-container">
 		<div className="tabla">
 			<PlacesTable />
 		</div>
