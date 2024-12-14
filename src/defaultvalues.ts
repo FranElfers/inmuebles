@@ -1,6 +1,7 @@
 import { Place } from "./types";
 
 export const DefaultPlace: Place = {
+	"id": "",
 	"Title": "",
 	"Price": "",
 	"Currency": "",

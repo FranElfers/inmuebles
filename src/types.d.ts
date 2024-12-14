@@ -1,4 +1,5 @@
 export type Place = {
+	id: string
 	Title: string
 	Price: string
 	Currency: string

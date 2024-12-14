@@ -8,6 +8,7 @@ const Parser = {
 	}),
 
 	Place: z.object({
+		id: z.string(),
 		Title: z.string(),
 		Price: z.string(),
 		Currency: z.string(),
