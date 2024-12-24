@@ -43,7 +43,6 @@ export const UsersTable = () => {
 };
 
 export const PlacesTable = () => {
-	// const data = useGetData(getPlaces)
 	const data = useAtomValue(placesAtom)
 
 	const columns = useMemo<MRT_ColumnDef<Place>[]>(
@@ -70,7 +69,7 @@ export const PlacesTable = () => {
 	const table = useMaterialReactTable({
 		columns,
 		data
-	});
+	})
 
-	return <MaterialReactTable table={table} />;
+	return <MaterialReactTable table={table} />
 };
