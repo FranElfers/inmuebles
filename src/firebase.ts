@@ -39,6 +39,7 @@ export async function firebaseUploadPlace(place: Place) {
 }
 
 export function firebaseGetCollection(name: 'users' | 'places') {
+	console.log('[Firebase.getCollection] getting', name)
 	return getDocs(collection(db, name))
 		.then((res) => res.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
 		.then((res) => {
