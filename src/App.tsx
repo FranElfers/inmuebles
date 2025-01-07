@@ -6,6 +6,7 @@ import HomeView from './views/HomeView'
 import PlacesView from './views/PlacesView'
 import PlaceView from './views/PlaceView'
 import React from 'react'
+import Admin_JsonView from './views/Admin_JsonView'
 
 const LogLocation: React.FC<React.PropsWithChildren> = ({ children }) => {
   const location = useLocation()
@@ -29,6 +30,7 @@ function App() {
             <Route path="*" element={<Navigate to="/" />} />
           </Route>
           <Route path='admin' element={<MainGrid />} />
+          <Route path='admin_json' element={<Admin_JsonView />} />
         </Routes>
       </LogLocation>
       {/* <UsersTable />

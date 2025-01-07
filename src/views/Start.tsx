@@ -1,4 +1,5 @@
 import { PlacesTable } from '../components/Crud'
+import { MyNavLink } from '../components/CustomTags'
 import { useValidatePlace } from '../components/UploadPlace'
 import { useGetPlaces, useSetPlace } from '../hooks/firebase'
 import './Start.css'
@@ -34,6 +35,7 @@ const MainGrid = () => {
 
 			</div>
 		</div>
+		<MyNavLink to="/admin_json">Convertir keys de json</MyNavLink>
 	</div>
 }
 
