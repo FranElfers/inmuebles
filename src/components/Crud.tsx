@@ -6,12 +6,12 @@ import {
 } from 'material-react-table';
 import { firebaseGetUsers } from '../firebase';
 import { Place, User } from '../types';
-import { useGetData } from '../hooks/firebase';
+import { useRunPromise } from '../hooks/firebase';
 import { useAtomValue } from 'jotai';
 import { placesAtom } from '../tools/atoms';
 
 export const UsersTable = () => {
-	const data = useGetData(firebaseGetUsers)
+	const data = useRunPromise(firebaseGetUsers)
 
 	const columns = useMemo<MRT_ColumnDef<User>[]>(
 		() => [

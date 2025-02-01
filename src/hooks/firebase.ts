@@ -4,7 +4,12 @@ import { placesAtom } from "../tools/atoms"
 import { firebaseGetPlaces, firebaseUploadPlace } from "../firebase"
 import { Place } from "../types"
 
-export const useGetData = <T>(cb: () => Promise<T[]>): T[] => {
+/**
+ * Hook para la ejecucion de una promesa y conectarla con un useState.
+ * @param cb promesa
+ * @returns resultado de la promesa (reactivo)
+ */
+export const useRunPromise = <T>(cb: () => Promise<T[]>): T[] => {
 	const [data, setData] = useState<T[]>([])
 
 	useEffect(() => {

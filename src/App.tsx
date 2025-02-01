@@ -7,6 +7,9 @@ import PlacesView from './views/PlacesView'
 import PlaceView from './views/PlaceView'
 import React from 'react'
 import Admin_JsonView from './views/Admin_JsonView'
+import Admin_Index from './views/Admin_Index'
+import Admin_Database from './views/Admin_Database'
+import Admin_Structure from './views/Admin_Structure'
 
 const LogLocation: React.FC<React.PropsWithChildren> = ({ children }) => {
   const location = useLocation()
@@ -29,7 +32,10 @@ function App() {
             <Route path="place/:place" element={<PlaceView />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Route>
-          <Route path='admin' element={<MainGrid />} />
+          <Route path='admin' element={<Admin_Index />} />
+          <Route path='admin/db' element={<Admin_Database />} />
+          <Route path='admin/db/users' element={<Admin_Structure collectionName='users' />} />
+          <Route path='admin/db/places' element={<Admin_Structure collectionName='places' />} />
           <Route path='admin_json' element={<Admin_JsonView />} />
         </Routes>
       </LogLocation>
