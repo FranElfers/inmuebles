@@ -69,11 +69,8 @@ const Admin_Structure: React.FC<{ collectionName: string }> = ({ collectionName 
 	const places = useAtomValue(placesAtom)
 	const getPlaces = useGetPlaces()
 
-	return <>
-		<MyNavLink to="/admin/db">Volver</MyNavLink>
-		<span> | </span>
-		<a onClick={getPlaces}>Actualizar</a>
-
+	return <div>
+		<h2>{collectionName}</h2>
 		<table style={{ 'borderSpacing': '1rem' }}>
 			<tr>
 				<th>Title</th>
@@ -93,7 +90,7 @@ const Admin_Structure: React.FC<{ collectionName: string }> = ({ collectionName 
 		<SyntaxHighlighter language="json" style={materialDark}>
 			{JSON.stringify(DefaultPlace, undefined, 2)}
 		</SyntaxHighlighter> */}
-	</>
+	</div>
 }
 
 export default Admin_Structure

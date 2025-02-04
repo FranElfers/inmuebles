@@ -8,13 +8,12 @@ los nombres de los collections de una base de datos.
 */
 
 const Admin_Database = () => {
-	return <>
-		<MyNavLink to="/admin">Volver</MyNavLink>
+	return <div>
 		<h2>Tablas</h2>
 		<MyNavLink to="/admin/db/users">Users</MyNavLink>
 		<br />
 		<MyNavLink to="/admin/db/places">Places</MyNavLink>
-	</>
+	</div>
 }
 
 export default Admin_Database

@@ -45,6 +45,7 @@
 
 button:disabled {
   cursor: initial;
+  color: #787878de;
 }
 
 button:disabled:hover {

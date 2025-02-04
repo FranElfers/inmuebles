@@ -1,6 +1,6 @@
 import { Outlet } from "react-router"
 import { useGetPlaces } from "../hooks/firebase"
-import { MyButton, MyNavLink } from "./CustomTags"
+import { MyAsyncButton, MyButton, MyNavLink } from "./CustomTags"
 import { SideBarLinkType } from "../configs"
 import { FC, PropsWithChildren } from "react"
 
@@ -24,7 +24,7 @@ const SideBar: FC<PropsWithChildren<{ links: SideBarLinkType[] }>> = function ({
 
 	return <div className="sidebar">
 		{links.map((link) => <MyNavLink to={link.url}>{link.text}</MyNavLink>)}
-		<MyButton onClick={getPlaces} title="Obtener datos de Firebase">Obtener data</MyButton>
+		<MyAsyncButton onClick={getPlaces} title="Obtener datos de Firebase">Obtener data</MyAsyncButton>
 	</div>
 }
 

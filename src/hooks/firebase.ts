@@ -23,15 +23,10 @@ export const useRunPromise = <T>(cb: () => Promise<T[]>): T[] => {
  * Devuelve una funcion que permite obtener las propiedades y 
  * las guarda en un atom para su reactividad.
  */
-export const useGetPlaces = (): () => void => {
+export const useGetPlaces = (): () => Promise<void> => {
 	const setData = useSetAtom(placesAtom)
 
-	return () => {
-		firebaseGetPlaces().then((data) => {
-			setData(data)
-			return data
-		})
-	}
+	return () => firebaseGetPlaces().then(setData)
 }
 
 /**

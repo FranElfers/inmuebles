@@ -9,12 +9,12 @@ export const clientSideBarLinks: SideBarLinkType[] = [
 		text: "Home",
 	},
 	{
-		url: "/places",
-		text: "Places",
-	},
-	{
 		url: "/admin",
 		text: "Admin",
+	},
+	{
+		url: "/places",
+		text: "Places",
 	},
 ]
 
