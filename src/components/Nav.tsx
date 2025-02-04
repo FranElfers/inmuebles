@@ -1,6 +1,8 @@
 import { Outlet } from "react-router"
 import { useGetPlaces } from "../hooks/firebase"
 import { MyButton, MyNavLink } from "./CustomTags"
+import { SideBarLinkType } from "../configs"
+import { FC, PropsWithChildren } from "react"
 
 /**
  * Barra de busqueda con posicion absoluta.
@@ -17,23 +19,24 @@ function NavBar() {
 /**
  * Barra lateral de navegacion con posicion absoluta.
  */
-function SideBar() {
+const SideBar: FC<PropsWithChildren<{ links: SideBarLinkType[] }>> = function ({ links }) {
 	const getPlaces = useGetPlaces()
 
 	return <div className="sidebar">
-		<MyNavLink to="/">Home</MyNavLink>
-		<MyNavLink to="/places">Places</MyNavLink>
+		{links.map((link) => <MyNavLink to={link.url}>{link.text}</MyNavLink>)}
 		<MyButton onClick={getPlaces} title="Obtener datos de Firebase">Obtener data</MyButton>
 	</div>
 }
 
-export default function Nav() {
+const Nav: FC<PropsWithChildren<{ links: SideBarLinkType[] }>> = function ({ links }) {
 	return <>
 		<NavBar />
 		<div className="navbar-filler"></div>
 		<div className="container">
-			<SideBar />
+			<SideBar links={links} />
 			<Outlet />
 		</div>
 	</>
 }
+
+export default Nav
