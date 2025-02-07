@@ -10,6 +10,7 @@ import Admin_Index from './views/Admin_Index'
 import Admin_Database from './views/Admin_Database'
 import Admin_Structure from './views/Admin_Structure'
 import { adminSideBarLinks, clientSideBarLinks } from './configs'
+import Admin_PlaceDetail from './views/Admin_Detail'
 
 const LogLocation: FC<PropsWithChildren> = ({ children }) => {
   const location = useLocation()
@@ -37,6 +38,7 @@ function App() {
             <Route path='admin/db' element={<Admin_Database />} />
             <Route path='admin/db/users' element={<Admin_Structure collectionName='users' />} />
             <Route path='admin/db/places' element={<Admin_Structure collectionName='places' />} />
+            <Route path='admin/db/place/:place' element={<Admin_PlaceDetail />} />
             <Route path='admin_json' element={<Admin_JsonView />} />
           </Route>
         </Routes>

@@ -1,6 +1,6 @@
 import { Outlet } from "react-router"
 import { useGetPlaces } from "../hooks/firebase"
-import { MyAsyncButton, MyButton, MyNavLink } from "./CustomTags"
+import { MyAsyncButton, MyNavLink } from "./CustomTags"
 import { SideBarLinkType } from "../configs"
 import { FC, PropsWithChildren } from "react"
 
