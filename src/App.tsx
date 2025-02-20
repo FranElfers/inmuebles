@@ -11,6 +11,7 @@ import Admin_Database from './views/Admin_Database'
 import Admin_Structure from './views/Admin_Structure'
 import { adminSideBarLinks, clientSideBarLinks } from './configs'
 import Admin_PlaceDetail from './views/Admin_Detail'
+import Dashboard from './dashboard/Dashboard'
 
 const LogLocation: FC<PropsWithChildren> = ({ children }) => {
   const location = useLocation()
@@ -27,6 +28,7 @@ function App() {
     <BrowserRouter>
       <LogLocation>
         <Routes>
+          <Route path="dashboard" element={<Dashboard />} />
           <Route element={<Nav links={clientSideBarLinks} />}>
             <Route index element={<HomeView />} />
             <Route path="places" element={<PlacesView />} />
